@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lumora · 区块插件库</title>
+  <meta name="description" content="全屏电影感首页与 197 个独立设计区块：35 种设计主义、22 个分类、主义 × 组件矩阵、实时预览、复制源码与中文提示词。">
+  <link rel="stylesheet" href="library.css?v=200">
+  <link rel="stylesheet" href="lumora.css?v=200">
+</head>
+<body class="lumora-page">
+  <section class="hero" id="hero" data-hero>
+    <div class="hero-videos" aria-hidden="true">
+      <video class="hero-video is-active" src="assets/media/golden-hour.mp4" autoplay muted loop playsinline preload="auto"></video>
+      <video class="hero-video" src="assets/media/still-water.mp4" muted loop playsinline preload="metadata"></video>
+      <video class="hero-video" src="assets/media/deep-woods.mp4" muted loop playsinline preload="metadata"></video>
+      <video class="hero-video" src="assets/media/quiet-dawn.mp4" muted loop playsinline preload="metadata"></video>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-shade" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <nav class="hero-nav">
+        <a class="hero-brand" href="#hero">Lumora</a>
+        <div class="hero-nav-pill liquid-glass">
+          <a href="#library">区块库</a>
+          <a href="#filters">分类</a>
+          <a href="wiki/index.html">Wiki 演示</a>
+          <a href="#about">关于</a>
+          <a class="hero-cta" href="#library">开始浏览</a>
+        </div>
+        <button class="hero-menu-btn liquid-glass" type="button" data-menu-toggle aria-label="打开菜单" aria-expanded="false">
+          <svg class="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </nav>
+
+      <div class="hero-main">
+        <h1>让页面<br><em>有自己的呼吸</em></h1>
+        <form class="hero-form liquid-glass" data-early-form>
+          <input type="email" placeholder="你的邮箱" aria-label="你的邮箱" required>
+          <button type="submit">获取更新</button>
+        </form>
+        <p class="hero-status" data-form-status></p>
+        <div class="hero-switch" role="tablist" aria-label="背景场景">
+          <button class="is-active" type="button" data-video-index="0">金色时刻</button>
+          <button type="button" data-video-index="1">静水</button>
+          <button type="button" data-video-index="2">深林</button>
+          <button type="button" data-video-index="3">静谧黎明</button>
+        </div>
+      </div>
+
+      <a class="hero-scroll" href="#library">向下浏览 <span>↓</span></a>
+      <div class="hero-stats">
+        <span><b data-total>197</b> 个可复用区块</span>
+        <span class="divider">|</span>
+        <span><b data-cat-total>22</b> 个分类</span>
+        <span class="divider">|</span>
+        <span>2 个复制按钮</span>
+        <span class="divider">|</span>
+        <span>100% 本地资源</span>
+      </div>
+    </div>
+
+    <div class="mobile-menu" data-mobile-menu aria-hidden="true">
+      <div class="mobile-backdrop" data-menu-backdrop></div>
+      <div class="mobile-panel">
+        <button class="mobile-close liquid-glass" type="button" data-menu-close aria-label="关闭菜单">
+          <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <a class="mobile-link" style="--i:0" data-menu-link href="#library">区块库</a>
+        <a class="mobile-link" style="--i:1" data-menu-link href="#filters">分类</a>
+        <a class="mobile-link" style="--i:2" data-menu-link href="wiki/index.html">Wiki 演示</a>
+        <a class="mobile-link" style="--i:3" data-menu-link href="#about">关于</a>
+        <a class="mobile-cta" data-menu-link href="#library">开始浏览</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="library" id="library">
+    <section class="library-intro">
+      <div>
+        <h2>给页面<br><em>补上一块。</em></h2>
+      </div>
+      <div class="library-stats">
+        <div><strong data-total>197</strong><span>可复用区块</span></div>
+        <div><strong data-cat-total>22</strong><span>个分类</span></div>
+        <div><strong>100%</strong><span>本地资源</span></div>
+      </div>
+    </section>
+
+    <section class="filterbar" id="filters" aria-label="筛选插件">
+      <div class="filter-top">
+        <div class="groups" data-groups aria-label="区块分组"></div>
+        <div class="filter-tools">
+          <span class="filter-count">显示 <b data-count>197</b> 个</span>
+          <label class="filter-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+            <input type="search" placeholder="搜索名称或标签" data-search-field aria-label="按名称或标签筛选">
+          </label>
+        </div>
+      </div>
+      <div class="chips" data-chips></div>
+    </section>
+
+    <section class="grid" data-grid aria-live="polite"></section>
+
+    <div class="empty" data-empty hidden>
+      <strong>没有找到匹配的插件</strong>
+      <p>换个关键词，或回到全部分类。</p>
+      <button type="button" data-reset>查看全部区块</button>
+    </div>
+
+    <footer class="site-foot" id="about">
+      <div><strong>关于区块插件库</strong><span>197 个独立设计区块 · 22 个分类 · 35 种设计主义 · 主义 × 组件矩阵。</span></div>
+      <div class="foot-links"><a href="#hero">回到顶部 ↑</a><a href="wiki/index.html">Wiki 模板演示</a><a href="wiki/pages/components.html">组件说明</a></div>
+    </footer>
+  </main>
+
+  <div class="sheet" data-sheet aria-hidden="true">
+    <div class="sheet-backdrop" data-sheet-close></div>
+    <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+      <header class="sheet-head">
+        <div>
+          <span class="sheet-cat" data-sheet-cat></span>
+          <h2 id="sheet-title" data-sheet-title></h2>
+          <p data-sheet-desc></p>
+        </div>
+        <button class="sheet-x" type="button" data-sheet-close aria-label="关闭">×</button>
+      </header>
+      <div class="sheet-body">
+        <div class="sheet-stage">
+          <span class="sheet-tags" data-sheet-tags></span>
+          <div class="sheet-frame" data-sheet-frame></div>
+        </div>
+        <aside class="sheet-side">
+          <div class="sheet-tabs" role="tablist">
+            <button type="button" class="is-active" data-sheet-tab="source" role="tab">源码</button>
+            <button type="button" data-sheet-tab="prompt" role="tab">提示词</button>
+          </div>
+          <pre class="sheet-code" data-code></pre>
+          <div class="sheet-prompt" data-prompt hidden></div>
+          <div class="sheet-actions">
+            <button class="pcard-btn is-solid" type="button" data-copy-sheet="source"></button>
+            <button class="pcard-btn is-line" type="button" data-copy-sheet="prompt"></button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+  <script src="data/00-base.js"></script>
+  <script src="data/sections.js"></script>
+  <script src="data/media.js"></script>
+  <script src="data/controls.js"></script>
+  <script src="data/feedback.js"></script>
+  <script src="data/motion.js"></script>
+  <script src="data/expanded-sections.js"></script>
+  <script src="data/expanded-ui.js"></script>
+  <script src="data/designs-sections.js"></script>
+  <script src="data/designs-components.js"></script>
+  <script src="data/designs-app.js"></script>
+  <script src="data/styles-sections.js"></script>
+  <script src="data/styles-controls.js"></script>
+  <script src="data/styles-pages-a.js"></script>
+  <script src="data/styles-pages-b.js"></script>
+  <script src="data/matrix-1.js"></script>
+  <script src="data/matrix-2.js"></script>
+  <script src="data/matrix-3.js"></script>
+  <script src="data/matrix-4.js"></script>
+  <script src="data/styles-missing-1.js"></script>
+  <script src="data/styles-missing-2.js"></script>
+  <script src="data/styles-missing-3.js"></script>
+  <script src="data/matrix-plus-1.js"></script>
+  <script src="data/matrix-plus-2.js"></script>
+  <script src="data/matrix-plus-3.js"></script>
+  <script src="data/matrix-plus-4.js"></script>
+  <script src="data/style-order.js?v=197"></script>
+  <script src="lumora.js"></script>
+  <script src="library.js?v=197"></script>
+</body>
+</html>
